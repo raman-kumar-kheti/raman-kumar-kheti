@@ -2,59 +2,60 @@
 
 **Python Developer · AI Engineer · Agents & Automation Engineer**
 
-Agentic AI · Claude Agent SDK · MCP · GenAI · LLMs · FastAPI
+I build agentic AI systems, LLM applications and ML pipelines, with a focus on tool-using agents, retrieval, computer vision and production-grade APIs.
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-raman--kumar--kheti-0A66C2?logo=linkedin&logoColor=white)](https://linkedin.com/in/raman-kumar-kheti)
 [![Portfolio](https://img.shields.io/badge/Portfolio-ramankumarkheti.com-1f2937)](https://www.ramankumarkheti.com/)
 [![Email](https://img.shields.io/badge/Email-ramank.kheti@gmail.com-D14836?logo=gmail&logoColor=white)](mailto:ramank.kheti@gmail.com)
 
-📍 Bhubaneswar, India · 💼 Software Developer, AI Agents & Full Stack at **HyScaler (NetTantra Technologies)**
+📍 Bhubaneswar, India
 
 ---
 
-## About
+## 🚀 AI & ML Projects
 
-Software engineer with 3+ years of experience building and shipping **agentic AI and LLM-based systems** on the **Anthropic Claude Agent SDK** for a live fintech and legal-intelligence platform. I design agent harnesses, MCP servers and custom tools, and turn manual business processes into autonomous agent workflows, backed by Python (FastAPI), Node.js and PostgreSQL / SQL Server. I also lead engineering teams and work directly with senior leadership on technical direction.
+### 🧠 [NexusResearch AI](https://github.com/raman-kumar-kheti/nexus-research-ai): Multi-Agent Research Platform
+A stateful **6-agent LangGraph workflow** (planner → parallel web search → extractor → analyst → critic / fact-checker → human approval → reporter) that produces research reports with verified-only citations.
+- **MCP** server and client for tool integration, with **human-in-the-loop** approval before reports are finalized
+- Execution guardrails: bounded retries, token and cost budgets, per-agent latency tracing, loop limits
+- Fact-vs-interpretation separation, an agent evaluation framework, PDF / Markdown export, and CI with GitHub Actions
 
----
+`LangGraph` `LangChain` `MCP` `FastAPI` `Streamlit` `PostgreSQL` `Docker`
 
-## 🤖 AI Engineering: Production Work
+### 📚 [KnowMatrix AI](https://github.com/raman-kumar-kheti/knowmatrix-ai): Document Intelligence & RAG
+A retrieval-augmented generation platform that answers questions over PDFs with **page-level source citations**.
+- **Hybrid retrieval** (FAISS semantic search + BM25) with reranking
+- Document-level access control (`public` / `internal` / `admin`) and session-based conversational memory
+- Pluggable LLM providers (HuggingFace, Ollama, OpenAI-compatible) with **SSE streaming**
+- RAG evaluation: faithfulness, context precision, hallucination-risk scoring and insufficient-evidence refusal
 
-| Project | What I built | Impact |
-|---|---|---|
-| **Hyally Merqube: Contract Automation** (Legal Intelligence Platform, live) | Owned the AI agent layer end to end on the Claude Agent SDK for contract drafting, gap analysis and amendment creation. Built the agent harness (session and context handling, tool permissions, response streaming, error recovery) plus custom tools and MCP servers for controlled access to contract, client and clause data. Added an application-wide AI chat assistant for instant client and contract search. | **~90%** of a manual contract creation process automated; API latency cut by **~80%** |
-| **Merqube Index Automation** (browser-based AI assistant) | Built an assistant that connects to email, historical data (via MCP) and previous index calculations, then creates new indices through the browser JS API. It fills forms and makes decisions autonomously, with output validation so every index stays consistent and reviewable. | **~80%** less manual index-creation work |
-| **GMI Checking: Face Recognition Attendance Platform** (live product) | Led the team and designed a Node.js backend with a separate Python (FastAPI) microservice for real-time face recognition, built on a custom neural-network model and FaceNet embeddings. Used from both an Angular web app and an iOS app, with registration and verification APIs that drive automated monthly work-hour reports. | **95%** recognition accuracy |
+`Python` `FastAPI` `FAISS` `sentence-transformers` `LangChain` `React` `Docker`
 
-> These are proprietary company products, so the code is private.
-
----
-
-## 🌟 Featured Open-Source AI Project
-
-### [Gallery: AI-Powered Event Photo Delivery SaaS](https://github.com/raman-kumar-kheti/gallery)
-
-Guests scan a QR code, upload a selfie, and instantly find all their photos using AI face recognition.
-
-**How the AI pipeline works**
-
-- **Upload:** photo stored in Cloudflare R2 → Celery task queued → InsightFace generates a face embedding → embedding added to the event's FAISS index → thumbnail generated
-- **Guest search:** selfie upload → query embedding (InsightFace) → FAISS similarity search on the event's index → matching photos returned, with the session cached to avoid reprocessing
-
-**Highlights**
-
-- One FAISS index per event, mapped to PostgreSQL rows and persisted across restarts
-- Async AI worker (Celery + Redis) separated from the API for scalable processing
+### 📸 [Gallery](https://github.com/raman-kumar-kheti/gallery): AI Event Photo Delivery SaaS
+Guests scan a QR code, upload a selfie, and instantly find all their photos using **AI face recognition**.
+- Async AI pipeline: upload → Celery task → **InsightFace** embedding → per-event **FAISS** index → similarity search
 - Multi-tenant model for studios, photographers and customers, with team RBAC, Google OAuth + JWT and Razorpay payments
 - Fully containerised with Docker Compose
 
-**Stack:** Python · FastAPI · InsightFace · FAISS · Celery · Redis · PostgreSQL · Next.js 14 · TypeScript · Docker
+`Python` `FastAPI` `InsightFace` `FAISS` `Celery` `Redis` `PostgreSQL` `Next.js`
 
-### [Docklly: AI-Powered Legal Document Management](https://github.com/raman-kumar-kheti/Docklly)
+### 🏭 [VisionGuard AI](https://github.com/raman-kumar-kheti/visionguard-ai): Industrial Defect Detection
+A visual inspection platform built on **PatchCore (ResNet18)** with pixel-level defect localization.
+- k-center greedy coreset subsampling, calibrated anomaly thresholds, and defect severity classification (`OK` → `CRITICAL`)
+- **ONNX + OpenVINO** export, with CPU inference benchmarked at about 51 ms per image
+- FastAPI inspection service with SQLite history, a Streamlit dashboard and a Pytest suite
 
-An AI-powered platform for legal document creation, management, compliance checking and secure storage.
+`PyTorch` `OpenVINO` `FastAPI` `Streamlit` `Docker`
 
-**Stack:** C# · ASP.NET Core 8 · SQL Server
+### 📈 [PredictFlow ML](https://github.com/raman-kumar-kheti/predictflow-ml): Churn Prediction & MLOps
+An end-to-end machine learning pipeline for customer churn, from data validation to monitored serving.
+- Feature engineering, class-imbalance handling (SMOTE) and model comparison across Logistic Regression, Random Forest and Gradient Boosting
+- **MLflow** experiment tracking and Model Registry with automated best-model selection
+- FastAPI prediction service with risk tiers, **PSI + KS drift monitoring**, Streamlit dashboard and CI
+
+`Scikit-learn` `MLflow` `FastAPI` `Streamlit` `Docker` `GitHub Actions`
+
+> *Several of these projects extend open-source upstream repositories. Each README documents what was inherited and what I added.*
 
 ---
 
@@ -62,25 +63,25 @@ An AI-powered platform for legal document creation, management, compliance check
 
 | | |
 |---|---|
-| **Agentic AI & GenAI** | Anthropic Claude Agent SDK, Claude API, MCP Servers, Agent Harness Design, Context Management, Tool Design, Prompt Engineering & Output Validation, Agentic Workflow Automation, Claude Code, Gemini CLI |
-| **Computer Vision** | InsightFace, FaceNet, FAISS, Face Recognition Pipelines |
-| **Backend** | Python (FastAPI, asyncio), Node.js (Express), REST APIs, Microservices, JWT, OAuth 2.0, RBAC |
-| **Data** | PostgreSQL, SQL Server, Redis, Query Optimization |
-| **Cloud & DevOps** | AWS (EC2, Lambda), Docker, CI/CD, Git, Linux |
-| **Frontend & Mobile** | Next.js, Angular, React, React Native |
+| **Agentic AI & LLMs** | Anthropic Claude Agent SDK, Claude API, MCP, LangGraph, LangChain, RAG, Prompt Engineering, Claude Code |
+| **ML & Computer Vision** | PyTorch, Scikit-learn, MLflow, InsightFace, FAISS, OpenVINO |
+| **Backend** | Python (FastAPI, asyncio), Node.js, REST APIs, PostgreSQL, SQL Server, Redis |
+| **DevOps** | Docker, GitHub Actions, AWS (EC2, Lambda), Linux, Git |
 
 ---
 
 <details>
-<summary><b>🛠️ Other Projects</b></summary>
+<summary><b>🛠️ More Projects</b></summary>
 
 <br>
 
-- **[RS-OS](https://github.com/raman-kumar-kheti/RS-OS)**: custom Debian-based Linux OS with PAM authentication and a PyQt desktop interface (Python)
-- **[Smart-Home](https://github.com/raman-kumar-kheti/Smart-Home)**: IoT home automation with a React Native app and ESP8266 firmware over MQTT
-- **[Color-Minds](https://github.com/raman-kumar-kheti/Color-Minds)**: Android color-guessing game built with React Native CLI
+- **[Docklly](https://github.com/raman-kumar-kheti/Docklly)**: AI-powered legal document management (C#, ASP.NET Core 8)
+- **[FreeMailo](https://github.com/raman-kumar-kheti/freemailo)**: self-hosted multi-domain email (Postfix, Dovecot, Rspamd, NestJS, Next.js)
+- **[RS-OS](https://github.com/raman-kumar-kheti/RS-OS)**: custom Debian-based Linux OS with PAM authentication and a PyQt desktop (Python)
+- **[Smart-Home](https://github.com/raman-kumar-kheti/Smart-Home)**: IoT automation with a React Native app and ESP8266 firmware over MQTT
+- **[Color-Minds](https://github.com/raman-kumar-kheti/Color-Minds)**: Android color-guessing game (React Native)
 - **[Whiteboard](https://github.com/raman-kumar-kheti/Whiteboard)**: canvas drawing app in vanilla JavaScript · [Live demo](https://whiteboard-mauve-one.vercel.app)
-- **[Autonomous-Guided-Vehicle-Material](https://github.com/raman-kumar-kheti/Autonomous-Guided-Vehicle-Material)**: autonomous vehicle and robotics code in C++
+- **[Autonomous-Guided-Vehicle-Material](https://github.com/raman-kumar-kheti/Autonomous-Guided-Vehicle-Material)**: autonomous vehicle and robotics code (C++)
 
 </details>
 
@@ -88,6 +89,6 @@ An AI-powered platform for legal document creation, management, compliance check
 
 ## 🤝 Let's Connect
 
-I'm open to conversations about **agentic AI, MCP and LLM-powered automation, and computer-vision products**.
+Open to conversations about **agentic AI, LLM applications, RAG and ML engineering**.
 
 📧 [ramank.kheti@gmail.com](mailto:ramank.kheti@gmail.com) · 💼 [LinkedIn](https://linkedin.com/in/raman-kumar-kheti) · 🌐 [ramankumarkheti.com](https://www.ramankumarkheti.com/)
