@@ -64,8 +64,8 @@ An end-to-end machine learning pipeline for customer churn, from data validation
 | | |
 |---|---|
 | **Agentic AI & LLMs** | Anthropic Claude Agent SDK, Claude API, MCP, LangGraph, LangChain, RAG, Prompt Engineering, Claude Code |
-| **ML & Computer Vision** | PyTorch, Scikit-learn, MLflow, InsightFace, FAISS, OpenVINO |
-| **Backend** | Python (FastAPI, asyncio), Node.js, REST APIs, PostgreSQL, SQL Server, Redis |
+| **ML & Computer Vision** | PyTorch, Scikit-learn, MLflow, InsightFace, FAISS, Keras, OpenVINO, TensorFlow |
+| **Backend** | Python (FastAPI, asyncio), Pandas & NumPy, Node.js, REST APIs, PostgreSQL, SQL Server, Redis |
 | **DevOps** | Docker, GitHub Actions, AWS (EC2, Lambda), Linux, Git |
 
 ---
