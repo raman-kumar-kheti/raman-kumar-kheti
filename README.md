@@ -55,8 +55,6 @@ An end-to-end machine learning pipeline for customer churn, from data validation
 
 `Scikit-learn` `MLflow` `FastAPI` `Streamlit` `Docker` `GitHub Actions`
 
-> *Several of these projects extend open-source upstream repositories. Each README documents what was inherited and what I added.*
-
 ---
 
 ## 🧰 Tech Stack
